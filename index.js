@@ -1,7 +1,4 @@
-const navigation = (e) => {
-  const element = e.target;
-  const id = element.dataset.id;
-
+const navigation = (id) => (e) => {
   document.querySelectorAll('.active').forEach((item) => item.classList.remove('active'));
 
   document
@@ -15,4 +12,4 @@ const navigation = (e) => {
 
 const tabs = document.querySelectorAll('.fonts__list li');
 
-tabs.forEach((tab) => tab.addEventListener('click', navigation));
+tabs.forEach((tab, i) => tab.addEventListener('click', navigation(i)));
